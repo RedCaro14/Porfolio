@@ -1,19 +1,11 @@
 import Header from '../components/Home/Header';
-import ResumeHome from '../components/Home/ResumeHome';
-import Projects from '../components/Home/ProjectsHome';
-import ContactHome from '../components/Home/ContactHome';
-import StackHome from '../components/Home/StackHome';
-
+import Portfolio from '../components/Home/Portfolio';
 function HomeScreen() {
  
   return (
       <div>
         <Header/>
-
-        <ResumeHome />
-        <StackHome />
-        <Projects />
-        <ContactHome />
+        <Portfolio/>
       </div>
   )
 }

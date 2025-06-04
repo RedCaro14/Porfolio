@@ -11,11 +11,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", href: "/" },
-    { name: "Resume", href: "/resume" },
     { name: "Projects", href: "/projects" },
-    { name: "Stack", href: "/stack" },
-    { name: "Contact", href: "/contact" },
-    // { name: "Comprar", href: "https://web.whatsapp.com/", isButton: true },
   ];
 
   useEffect(() => {
@@ -57,8 +53,8 @@ const Navbar = () => {
           >
             <div className="flex items-center transform transition-transform duration-200 hover:scale-105">
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
-              <h1 className="text-lg sm:text-xl font-bold ml-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Julian's Portfolio
+              <h1 className="text-lg sm:text-xl font-bold ml-2 text-pink-600 dark:text-pink-400 bg-clip-text text-transparent">
+                Caroline's Portfolio
               </h1>
             </div>
           </NavLink>
