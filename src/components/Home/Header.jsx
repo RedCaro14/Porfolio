@@ -8,7 +8,7 @@ const HomeFirstView = () => {
         {/* Text content */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Hola, soy <span className="text-indigo-600">[Tu Nombre]</span>
+            Hola, soy <span className="text-indigo-600">Carolina</span>
           </h1>
           <p className="text-lg text-gray-700 mb-8">
             Ayudo a empresas y emprendedores a transformar ideas en productos digitales funcionales y escalables que resuelven problemas reales y generan valor tangible.
