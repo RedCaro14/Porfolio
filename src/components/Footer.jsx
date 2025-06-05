@@ -3,35 +3,56 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
-  FaGoogle,
-  FaYoutube,
+  FaGithub,
+  FaLinkedinIn,
 } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="flex flex-col items-center justify-center space-y-6">
-        {/* Social Icons */}
-        <div className="flex space-x-6 text-white text-xl">
-          <a href="#"><FaFacebookF className="hover:text-gray-400" /></a>
-          <a href="#"><FaInstagram className="hover:text-gray-400" /></a>
-          <a href="#"><FaTwitter className="hover:text-gray-400" /></a>
-          <a href="#"><FaGoogle className="hover:text-gray-400" /></a>
-          <a href="#"><FaYoutube className="hover:text-gray-400" /></a>
-        </div>
+    <footer className="bg-gradient-to-br from-white to-gray-50 py-12 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
+        <div className="flex flex-col items-center justify-center space-y-8">
+          {/* Social Icons */}
+          <div className="flex space-x-8">
+            <a 
+              href="https://github.com/kalugy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300 transform hover:scale-110"
+            >
+              <FaGithub className="w-6 h-6" />
+            </a>
+            <a 
+              href="#" 
+              className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300 transform hover:scale-110"
+            >
+              <FaLinkedinIn className="w-6 h-6" />
+            </a>
+            <a 
+              href="#" 
+              className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300 transform hover:scale-110"
+            >
+              <FaInstagram className="w-6 h-6" />
+            </a>
+            <a 
+              href="#" 
+              className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300 transform hover:scale-110"
+            >
+              <FaTwitter className="w-6 h-6" />
+            </a>
+          </div>
 
-        {/* Navigation Links */}
-        <div className="flex space-x-6 text-sm">
-          <a href="#" className="hover:text-gray-400 text-xs">Home</a>
-          <a href="#" className="hover:text-gray-400">News</a>
-          <a href="#" className="hover:text-gray-400">About</a>
-          <a href="#" className="hover:text-gray-400">Contact Us</a>
-          <a href="#" className="hover:text-gray-400">Our Team</a>
-        </div>
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <a href="/" className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300">Inicio</a>
+            <a href="/profile" className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300">Perfil</a>
+            <a href="/projects" className="text-gray-600 hover:text-[#F00E8D] transition-colors duration-300">Proyectos</a>
+          </div>
 
-        {/* Copyright */}
-        <div className="text-xs text-gray-400 text-center">
-          Copyright ©2022. Designed by <span className="text-white font-semibold">Caroline</span>
+          {/* Copyright */}
+          <div className="text-sm text-gray-500 text-center">
+            © {new Date().getFullYear()} Carolina. Todos los derechos reservados.
+          </div>
         </div>
       </div>
     </footer>

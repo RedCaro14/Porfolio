@@ -10,8 +10,9 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
+    { name: "Inicio", href: "/" },
+    { name: "Perfil", href: "/profile" },
+    { name: "Proyectos", href: "/projects" },
   ];
 
   useEffect(() => {
@@ -31,16 +32,21 @@ const Navbar = () => {
   };
 
   const handleMenuClick = () => {
-    scrollToTop(); // Scroll to top
-    setMobileMenuOpen(false); // Close the menu
+    scrollToTop();
+    setMobileMenuOpen(false);
   };
+
+  // Check if we're on the profile page
+  const isProfilePage = location.pathname === '/profile';
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+        isProfilePage 
+          ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+          : isScrolled 
+            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' 
+            : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,8 +59,8 @@ const Navbar = () => {
           >
             <div className="flex items-center transform transition-transform duration-200 hover:scale-105">
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
-              <h1 className="text-lg sm:text-xl font-bold ml-2 text-pink-600 dark:text-pink-400 bg-clip-text text-transparent">
-                Caroline's Portfolio
+              <h1 className="text-lg sm:text-xl font-bold ml-2 text-[#F00E8D] dark:text-[#F00E8D] bg-clip-text text-transparent">
+                Portafolio de Carolina
               </h1>
             </div>
           </NavLink>
@@ -67,23 +73,24 @@ const Navbar = () => {
                 to={item.href}
                 onClick={handleMenuClick}
                 className={({ isActive }) => `
-                  relative font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 
+                  relative font-medium text-black dark:text-gray-200 hover:text-[#F00E8D] dark:hover:text-[#F00E8D] 
                   transition-colors duration-200
-                  ${isActive ? 'text-indigo-600 dark:text-indigo-400' : ''}
+                  ${isActive ? 'text-[#F00E8D] dark:text-[#F00E8D]' : ''}
                 `}
               >
                 {item.name}
                 {location.pathname === item.href && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-indigo-400" />
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F00E8D] dark:bg-[#F00E8D]" />
                 )}
               </NavLink>
             ))}
             
             {/* Theme Toggle Button */}
+            {/* 
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors transform hover:scale-110 active:scale-95"
-              aria-label="Toggle theme"
+              aria-label="Cambiar tema"
             >
               {isDarkMode ? (
                 <FaSun className="w-5 h-5 text-yellow-500" />
@@ -91,19 +98,18 @@ const Navbar = () => {
                 <FaMoon className="w-5 h-5 text-gray-700" />
               )}
             </button>
-          {/* github button */}
-          <a href="https://github.com/kalugy" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="w-5 h-5 dark:text-white text-gray-700" />
-          </a>
-          
-          {/*ES y EN button */}
+    */}
+            {/* GitHub button */}
+            <a href="https://github.com/kalugy" target="_blank" rel="noopener noreferrer" className="hover:text-[#F00E8D] transition-colors">
+              <FaGithub className="w-5 h-5 dark:text-white text-gray-700" />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Abrir menú"
           >
             <div className="w-6 h-6 flex flex-col justify-around">
               <span className={`block w-full h-0.5 bg-current transform transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
@@ -129,7 +135,7 @@ const Navbar = () => {
               className={({ isActive }) => `
                 block px-4 py-2 rounded-lg text-base font-medium
                 ${isActive 
-                  ? 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400' 
+                  ? 'bg-[#F00E8D]/10 dark:bg-[#F00E8D]/20 text-[#F00E8D] dark:text-[#F00E8D]' 
                   : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800'
                 }
                 transition-colors duration-200
@@ -140,17 +146,19 @@ const Navbar = () => {
           ))}
           
           {/* Theme Toggle for Mobile */}
+           {/*
           <button
             onClick={toggleTheme}
             className="w-full flex items-center justify-between px-4 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
-            <span className="font-medium">Theme</span>
+            <span className="font-medium">Tema</span>
             {isDarkMode ? (
               <FaSun className="w-5 h-5 text-yellow-500" />
             ) : (
               <FaMoon className="w-5 h-5 text-gray-700" />
             )}
           </button>
+          */}
         </div>
       </div>
     </nav>
